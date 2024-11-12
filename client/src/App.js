@@ -6,7 +6,7 @@ function App() {
     const [data, setData] = useState([]);
 
     const handleSubmit = async () => {
-        const response = await fetch("http://localhost:7000/todo", {
+        const response = await fetch("https://todo-list-backend-7qfv.onrender.com/todo", {
             method: 'POST',
             body: JSON.stringify({ item: input }),
             headers: {
@@ -20,12 +20,12 @@ function App() {
     };
 
     const fetchData = async () => {
-        const response = await fetch("http://localhost:7000/todo");
+        const response = await fetch("https://todo-list-backend-7qfv.onrender.com/todo");
         const data1 = await response.json();
         setData(data1);
     };
     const handledelete = async (item) =>{
-      const response=await fetch("http://localhost:7000/todo",{
+      const response=await fetch("https://todo-list-backend-7qfv.onrender.com/todo",{
         method:'DELETE',
         body:JSON.stringify({item:item}),
         headers: {
